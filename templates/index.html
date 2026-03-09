@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Cloud Storage</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-brands fa-discord"></i>
+                <h1>Cloud<span>Stor</span></h1>
+            </div>
+            <div class="user-profile">
+                <div class="avatar"></div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Area -->
+            <section class="upload-section">
+                <div class="upload-dropzone" id="dropzone">
+                    <input type="file" id="fileInput" hidden>
+                    <div class="upload-content">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <h2>Drag & Drop your files here</h2>
+                        <p>or click to browse your computer</p>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar Container (Hidden by default) -->
+                <div class="upload-progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-info">
+                        <span id="progressFilename" class="filename">uploading_file.zip</span>
+                        <span id="progressPercentage" class="percentage">0%</span>
+                    </div>
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File List Area -->
+            <section class="files-section">
+                <div class="section-header">
+                    <h2>Your Storage</h2>
+                    <div class="storage-stats">
+                        <i class="fa-solid fa-hard-drive"></i>
+                        <span>File list will appear below</span>
+                    </div>
+                </div>
+
+                <div class="files-list" id="filesList">
+                    <!-- Files will be injected here via JS -->
+                     <div class="empty-state">
+                        <i class="fa-regular fa-folder-open"></i>
+                        <p>No files uploaded yet.</p>
+                     </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
